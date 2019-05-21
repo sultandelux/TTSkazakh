@@ -27,7 +27,7 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>com.github.newrichman</groupId>
+			<groupId>com.github.goxr3plus</groupId>
 			<artifactId>java-google-speech-api</artifactId>
 			<version>V2.1</version>
 		</dependency>
@@ -40,8 +40,8 @@
 	</dependencies>
 
 	<name>Java Google Speech Recognizer</name>
-	<description>Made by newrichman based on  https://github.com/newrichman/</description>
+	<description>Made by newrichman based on  https://github.com/lkuza2/java-speech-api/</description>
 	<organization>
-		<name>newrich DarInTech</name>
+		<name>mewrichman</name>
 	</organization>
 </project>

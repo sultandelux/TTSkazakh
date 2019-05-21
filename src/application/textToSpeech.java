@@ -8,21 +8,18 @@ import javazoom.jl.decoder.JavaLayerException;
 import javazoom.jl.player.advanced.AdvancedPlayer;
 import static application.NewJFrame.jTextArea1;
 
-/**
- * 
- * @author https://github.com/Newrichman
- *
- */
+
 public class textToSpeech {
+	
 	//Create a Synthesizer instance
 	SynthesiserV2 synthesizer = new SynthesiserV2("AIzaSyBOti4mM-6x9WDnZIjIeyEU21OpBXqWBgw");
+	
 	/**
 	 * Constructor
 	 */
 	public textToSpeech() {
 		
-		//speak
-                String str = jTextArea1.getText();
+		String str = jTextArea1.getText();
                 str = str.replaceAll("к", "k");
                 str = str.replaceAll("ж", "zh");
                 str = str.replaceAll("т", "tj");
@@ -74,6 +71,7 @@ public class textToSpeech {
 	public void speak(String text) {
 		System.out.println(text);
 		
+		//Create a new Thread because JLayer is running on the current Thread and will make the application to lag
 		Thread thread = new Thread(() -> {
 			try {
 				
@@ -90,6 +88,7 @@ public class textToSpeech {
 			}
 		});
 		
+		//We don't want the application to terminate before this Thread terminates
 		thread.setDaemon(false);
 		
 		//Start the Thread
